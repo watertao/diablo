@@ -3,12 +3,16 @@ package net.watertao.diablo;
 import java.io.Serializable;
 
 /**
- * Created by watertao on 8/31/16.
+ * A value class for hold matched part of sensitive word in text
+ *
+ * @author watertao
  */
 public class MatchPoint implements Serializable {
 
+  /** the start index of sensitive word in text */
   private int start;
 
+  /** the end index of sensitive word in text */
   private int end;
 
   private String word;

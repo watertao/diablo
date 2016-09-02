@@ -6,16 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A line is considered to be terminated by any one
- * of a line feed ('\n'), a carriage return ('\r'), or a carriage return
- * followed immediately by a linefeed
+ * This Reader used for reading line separated sensitive words format file.
+ * A line is considered to be terminated by any one of a line feed ('\n'), a carriage return ('\r'), or a carriage
+ * return followed immediately by a linefeed.
  *
- * Created by watertao on 8/31/16.
+ * @author watertao
  */
 public class LineSeparationReader implements SensitiveWordPatternReader {
 
   private BufferedReader patternReader = null;
-
 
   public LineSeparationReader(File file) throws FileNotFoundException {
     InputStream in = new FileInputStream(file);

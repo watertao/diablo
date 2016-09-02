@@ -13,7 +13,6 @@ import java.util.List;
  * A filter for finding sensitive words in specified text.
  * Use aho-corasick algorithm.
  *
- *
  * @author watertao
  */
 public class SensitiveWordFilter {

@@ -1,7 +1,6 @@
 package net.watertao.diablo;
 
 import net.watertao.diablo.reader.LineSeparationReader;
-import net.watertao.diablo.reader.SensitiveWordPatternReader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +8,9 @@ import java.io.InputStream;
 import java.nio.charset.Charset;
 
 /**
- * Created by watertao on 9/1/16.
+ * A helper class for conveniently creating filter from line-separating formatting sensitive word file.
+ *
+ * @author watertao
  */
 public class LineSeparationSensitiveWordFilter extends SensitiveWordFilter {
 
