@@ -18,6 +18,7 @@ InputStream in = Test.class.getResourceAsStream("/sensitive-words.txt");
 // 创建过滤器实例
 LineSeparationSensitiveWordFilter sensitiveWordFilter = new LineSeparationSensitiveWordFilter(in, Charset.forName("UTF-8"));
 // 构建过滤器 aho-corasick trie 树结构
+// 当我们需要更新敏感词列表的时候,可以再次调用此方法进行 Trie 结构的重构
 sensitiveWordFilter.build();
 
 // 
@@ -40,6 +41,11 @@ xi近平(10:13)
 台独(1264:1265)
 ```
 上面的输出列表中括号里是字符在文本中所处的位置.
+
+## 敏感词源文件格式扩展
+目前只实现了行分隔的敏感词源文件格式, 倘若要实现其它格式的文件,那么可以实现 `SensitiveWordPatternReader` 接口,然后在构造 Filter 的时
+候把这个 Reader 的实例传入即可.
+
 
 ## 关于 aho-corasick 算法
 如果简单的使用 String.indexOf 或 正则表达式来进行匹配, 性能上并不算高效.目前主流的多模匹配算法就是 aho-corasick .
